@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Document>
+<Style id="z1">
+<IconStyle>
+<Icon>
+<href>
+http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png
+</href>
+</Icon>
+</IconStyle>
+</Style>
+<Placemark>
+<name>Home</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.3001475,34.0130612</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Expo/Vermont</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2918229,34.0187192</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Jefferson/Vermont</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2913858,34.0253526</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Figueroa/Jeff</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2800251,34.0219288</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Expo/Figueora</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.282378,34.018506</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Tommy</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2854774,34.0201999</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Doheny Library</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2841214,34.020242</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Brittingham</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2874958,34.0228999</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Cromwell</name>
+<styleUrl>#z1</styleUrl>
+<Point>
+<coordinates>-118.2879863,34.0219687</coordinates>
+</Point>
+</Placemark>
+<Placemark> 
+ <Polygon> <outerBoundaryIs>  <LinearRing>  
+  <coordinates>
+   -118.3001475,34.0130612,10 
+   -118.2913858,34.0253526,10
+   -118.2800251,34.0219288,10
+   -118.282378,34.018506,10
+   -118.3001475,34.0130612,10
+  </coordinates>
+ </LinearRing> </outerBoundaryIs> </Polygon>
+<Style> 
+  <PolyStyle>  
+   <color>#a00000ff</color>
+  <outline>0</outline>
+  </PolyStyle> 
+ </Style>
+</Placemark>
+<Placemark>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>1</tessellate>
+        <coordinates>-118.3001475,34.0130612,0  -118.2918229,34.0187192,0</coordinates>
+      </LineString>
+    </Placemark>
+<Placemark>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>1</tessellate>
+        <coordinates>-118.3001475,34.0130612,0  -118.2913858,34.0253526,0</coordinates>
+      </LineString>
+    </Placemark>
+<Placemark>
+      <LineString>
+        <extrude>1</extrude>
+        <tessellate>1</tessellate>
+        <coordinates>-118.3001475,34.0130612,0  -118.2879863,34.0219687,0</coordinates>
+      </LineString>
+    </Placemark>
+</Document>
+</kml>

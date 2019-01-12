@@ -1,0 +1,47 @@
+Query 1: Convex hull
+
+SELECT ST_AsText(ST_ConvexHull(
+	ST_Collect(
+			ST_GeomFromText('MULTIPOINT(-118.3001475 34.0130612,
+						    -118.2918229 34.0187192,
+						     -118.2913858 34.0253526,
+						     -118.2800251 34.0219288,
+						     -118.282378 34.018506,
+						     -118.2854774 34.0201999,
+						     -118.2841214 34.020242,
+						     -118.2874958 34.0228999,
+						     -118.2879863 34.0219687)')
+			)) );
+
+
+Output:
+
+"POLYGON((-118.3001475 34.0130612,-118.2913858 34.0253526,-118.2800251 34.0219288,-118.282378 34.018506,-118.3001475 34.0130612))"
+
+
+Query 2: 3 nearest neighbor
+
+CREATE TABLE location (id INTEGER,NAME VARCHAR(50), shape geometry);
+
+INSERT INTO location VALUES (1,'HOME',ST_GeomFromText('POINT(-118.299881 34.013501)',4326));
+INSERT INTO location VALUES (2,'Expo/Vermont',ST_GeomFromText('POINT(-118.2918229 34.0187192)',4326));
+INSERT INTO location VALUES (3,'Jefferson/Vermont',ST_GeomFromText('POINT(-118.2913858 34.02535263)',4326));
+INSERT INTO location VALUES (4,'Figueroa/Jeff',ST_GeomFromText('POINT(-118.2800251 34.0219288)',4326));
+INSERT INTO location VALUES (5,'Expo/Figueora',ST_GeomFromText('POINT(-118.282378 34.018506)',4326));
+INSERT INTO location VALUES (6,'Tommy',ST_GeomFromText('POINT(-118.2854774 34.0201999)',4326));
+INSERT INTO location VALUES (7,'Doheny-Library',ST_GeomFromText('POINT(-118.2841214 34.020242)',4326));
+INSERT INTO location VALUES (8,'Brittingham',ST_GeomFromText('POINT(-118.2874958 34.0228999)',4326));
+INSERT INTO location VALUES (9,'Cromwell',ST_GeomFromText('POINT(-118.2879863 34.0219687)',4326));
+
+
+
+SELECT id,name,shape <-> st_setsrid(st_makepoint(-118.299881 34.013501),4326) as d
+FROM points WHERE shape <-> st_setsrid(st_makepoint(-118.299881 34.013501),4326) != 0
+ORDER BY shape <-> st_setsrid(st_makepoint(-118.299881 34.013501),4326)
+LIMIT 3;
+
+
+Output:
+2;"Expo/Vermont";0.00960013473082586
+3;"Jefferson/Vermont";0.0145818228180477
+9;"Cromwell";0.014600884609504
